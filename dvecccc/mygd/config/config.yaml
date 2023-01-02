@@ -1,20 +1,18 @@
-chain_normal:
-  chain_A: 0001
-  chain_B: 0010
-  chain_C: 0011
-  chain_D: 0100
-  chain_E: 0101
-  chain_F: 0110
-  chain_G: 0111
-  chain_H: 1000
-  chain_I: 1001
-  chain_J: 1011
-  chain_K: 1100
-  chain_L: 1101
-  chain_M: 1110
+chainNormal:
+  chainTypeA: 0001
+  chainTypeB: 0010
+  chainTypeC: 0011
+  chainTypeD: 0100
+  chainTypeE: 0101
+  chainTypeF: 0110
+  chainTypeG: 0111
+  chainTypeH: 1000
+  chainTypeI: 1001
+  chainTypeJ: 1011
+  chainTypeK: 1100
+  chainTypeL: 1101
+  chainTypeM: 1110
 
-chain_special:
-  chain_S1: 1111
-  chain_S2: 0000
-
-
+chainSpecial:
+  chainSpecialOne: 0000
+  chainSpecialTwo: 0001

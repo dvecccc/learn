@@ -7,47 +7,40 @@ import (
 )
 
 type Config struct {
-	ChainNormal  ChainNormal  `yaml:"chain_normal"`
-	ChainSpecial ChainSpecial `yaml:"chain_special"`
+	ChainNormal  ChainNormal  `yaml:"chainNormal"`
+	ChainSpecial ChainSpecial `yaml:"chainSpecial"`
 }
 
 type ChainNormal struct {
-	ChainTypeA string `yaml:"chain_A"`
-	ChainTypeB string `yaml:"chain_B"`
-	ChainTypeC string `yaml:"chain_C"`
-	ChainTypeD string `yaml:"chain_D"`
-	ChainTypeE string `yaml:"chain_E"`
-	ChainTypeF string `yaml:"chain_F"`
-	ChainTypeG string `yaml:"chain_G"`
-	ChainTypeH string `yaml:"chain_H"`
-	ChainTypeI string `yaml:"chain_I"`
-	ChainTypeJ string `yaml:"chain_J"`
-	ChainTypeK string `yaml:"chain_K"`
-	ChainTypeL string `yaml:"chain_L"`
-	ChainTypeM string `yaml:"chain_M"`
+	ChainTypeA string `yaml:"chainTypeA" json:"chainTypeA"`
+	ChainTypeB string `yaml:"chainTypeB" json:"chainTypeB"`
+	ChainTypeC string `yaml:"chainTypeC" json:"chainTypeC"`
+	ChainTypeD string `yaml:"chainTypeD" json:"chainTypeD"`
+	ChainTypeE string `yaml:"chainTypeE" json:"chainTypeE"`
+	ChainTypeF string `yaml:"chainTypeF" json:"chainTypeF"`
+	ChainTypeG string `yaml:"chainTypeG" json:"chainTypeG"`
+	ChainTypeH string `yaml:"chainTypeH" json:"chainTypeH"`
+	ChainTypeI string `yaml:"chainTypeI" json:"chainTypeI"`
+	ChainTypeJ string `yaml:"chainTypeJ" json:"chainTypeJ"`
+	ChainTypeK string `yaml:"chainTypeK" json:"chainTypeK"`
+	ChainTypeL string `yaml:"chainTypeL" json:"chainTypeL"`
+	ChainTypeM string `yaml:"chainTypeM" json:"chainTypeM"`
 }
 
 type ChainSpecial struct {
-	ChainTypeS1 string `yaml:"chain_S1"`
-	ChainTypeS2 string `yaml:"chain_S2"`
+	ChainTypeSpecialOne string `yaml:"chainSpecialOne" json:"chainTypeSpecialOne"`
+	ChainTypeSpecialTwo string `yaml:"chainSpecialTwo" json:"chainTypeSpecialTwo"`
 }
 
 func GetConfigData() string {
 	configFile, err := os.ReadFile("./config/config.yaml")
 	if err != nil {
-		log.Fatalf("File reading error: %v", err)
+		log.Fatalf("read config file error: %v", err)
 	}
 	var config Config
 	err = yaml.Unmarshal(configFile, &config)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("unmarshal config file error: %v	", err)
 	}
-	chain := config.ChainNormal.ChainTypeA
-	return chain
+	return config.ChainNormal.ChainTypeA
 }
-
-//
-//func main() {
-//	data := GetConfigData()
-//	fmt.Println(data)
-//}
