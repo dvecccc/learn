@@ -95,14 +95,6 @@ func (s *MicroService) DeleteExchange(exchange string) error {
 	return nil
 }
 
-func ChangeKey(info *MicroInfo) {
-
-}
-
 func connectionContainer(ip string, port string) {
-
-}
-
-func Add() {
 
 }
