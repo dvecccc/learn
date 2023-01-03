@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+//git: ssh-agent bash --> ssh-add ~/.ssh/2312
+
 func init() {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 	f, err := os.OpenFile("./log/rabbitmq.log", os.O_RDONLY|os.O_APPEND|os.O_CREATE, 0666)
